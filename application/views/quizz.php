@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/quizz.css')?>" />
-
+    <meta name="viewport" content="width=device-width">
     <!--  Link to Bootstrap online: « Content delivery network » CDN-->
     <link href="<?php echo(BOOTSTRAP_CDN); ?>" rel="stylesheet">
 
@@ -16,13 +16,10 @@
 </head>
 
 <body>
-
-<div class="container">
-
-    <header class="my-3">
+<div class="container-fluid">
+<header class="my-3">
         <h1 id="<?php echo($item);?>" class="text-center"><?php echo($title);?></h1>
     </header>
- 
     <section id="quizz" class="text-center my-3">
         <div id="content_zone" class="card">
             <div id="question_zone" class="card-block text-center">

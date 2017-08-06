@@ -7,21 +7,76 @@ html, body {
 }
 
 header {
-	height: 10em;
+	height: 40em;
+	width: 100%;
+	z-index: 5;
+    position: relative;	
 }
 
-header h1 {
-	padding: 1em;
+#bg{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url(../images/cintres.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  	opacity: 0.5;
+    filter: alpha(opacity=10);
+}
+
+header h1{
+	font-size: 5em;
+	color: rgba(0, 0, 0, 1);
+	padding-top: 1em;
+}
+
+header p{
+	margin-top: 2.5em;
+	font-size: 1.5em;
+}
+
+#cat_quizz{
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 1);
+	padding: 1em 1em;
+    font-size: 1em; 
+    line-height: normal;
+    -webkit-border-radius: 0.5em;
+       -moz-border-radius: 0.5em;
+            border-radius: 0.5em;
+}
+
+#cat_quizz:hover{
+	color: white;
+	border: 1px;
+}
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+
+#items {
+	height: 40em;
+	margin-top: 10em;
+	position: relative;
+}
+
+#pickanitem {
+	margin: 5em;
 }
 
 #banner_item{
 	margin-top: 5em;
-
-}
-
-#items {
-	margin-top: 10em;
-	margin-top: 10em;
 }
 
 #items img {
@@ -29,24 +84,46 @@ header h1 {
 	width: 10em;
 }
 
-#pickanitem {
-	margin: em;
-}
-
-button{
+#items button{
 	background-color: white;
 }
 
 
-/*****************************  MEDIA QUERIES  *************************************/
-
-@media (max-width: 1024px) {
-header {
-	height: 7em;
+footer{
+	margin-bottom: 0px;
 }
 
-header h1 {
-	padding: 0.5em;
+footer li {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    margin: 1em;
+}
+
+img {
+	width: 20px;
+    height: 20px;
+}
+
+/*****************************  MEDIA QUERIES  *************************************/
+
+@media only screen 
+and (max-width: 1024px) {
+header {
+	height: 40em;	
+}
+
+header h1{
+	font-size: 4em;
+	color: rgba(0, 0, 0, 1);
+	padding-top: 1em;
+}
+
+header p{
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-top: 2em;
+	font-size: 1.25em;
 }
 
 #banner_item{
@@ -61,20 +138,39 @@ width: 8rem;
 
 #items {
 	margin-top: 10em;
-	margin-top: 10em;
 }
 
 }
 
 
-@media (max-width: 400px) {
+@media only screen 
+and (max-width: 400px) {
 
-header {
-	height: 7em;
+	header {
+	height: 30em;	
 }
 
-header h1 {
-	padding: 0.5em;
+header h1{
+	font-size: 2.5em;
+	color: rgba(0, 0, 0, 1);
+	padding-top: 0.75em;
+}
+
+header p{
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-top: 1em;
+	font-size: 1.155em;
+}
+
+#cat_quizz{
+	color: black;
+	border: 1px solid rgba(0, 0, 0, 1);
+	padding: 0.75em 0.75em;
+    font-size: 1.125em;
+    -webkit-border-radius: 0.5em;
+       -moz-border-radius: 0.5em;
+            border-radius: 0.5em;
 }
 
 #banner_item{
@@ -88,7 +184,6 @@ width: 5rem;
 }
 
 #items {
-	margin-top: 10em;
 	margin-top: 10em;
 }
 
