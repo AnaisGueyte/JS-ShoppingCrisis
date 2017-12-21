@@ -1,0 +1,94 @@
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.header{
+	background-image: url(https://shouldibuythebag.com/assets/images/wedding-dresses.jpeg);
+    background-size: cover;
+    height: 40em;
+    width: 100%;
+}
+
+.header h1{
+    font-family: 'Yeseva One', cursive;
+	text-align: center;
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+}
+
+.main-stats{
+    /*height: 30em;*/
+    margin-top: 5em;
+    margin-bottom: 5em;
+    }
+
+.main-stats .row{
+    /*position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);*/
+}
+
+h1{
+    font-family: 'Yeseva One', cursive !important;
+    text-align: center;
+}
+
+p{
+    /*font-family: 'Bellefair', serif;*/
+    font-family: 'Playfair Display', serif;
+
+}
+
+.main-stats p{
+    text-align: center;
+    margin-top: 3em;
+    font-size: 1.25em;
+}
+
+.number-quizz span{
+	font-weight: bold;
+    font-size: 2em;
+}
+
+.main-stats-image{
+    text-align: center;
+}
+
+.main-stats-image img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.section-repeat{
+    /*height: 30em;*/
+    width: 80%;
+    margin: 0 auto 5em;
+    text-align: center;
+    border: 2px dotted #f48fb1;
+    border-radius: 5px;
+    padding: 5em;
+    }
+
+.user-repeat{
+    /*position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);*/
+}
+
+.section-answers{
+    height: 30em;
+    margin-bottom: 5em;
+}
+
+.section-answers .row{
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+}

@@ -4,77 +4,176 @@
 
 <head>
     <meta charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/start.css')?>" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/start.css'); ?>" />
     <link href="<?php echo base_url('assets/css/hover-min.css')?>" "" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
 
     <!--  Link to Bootstrap online: « Content delivery network » CDN-->
     <link href="<?php echo(BOOTSTRAP_CDN); ?>" rel="stylesheet">
+    <script src="<?php echo base_url('assets/js/hotjar_script.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/ga_script.js') ?>"></script>
 
 
     <!--  METAS FOR SEO-->
-    <title>Shopping Crisis: Should I Buy the bag ?</title>
-    <meta name="description" content="Take the quizz to find out if you really should buy the bag or leave it!" />
+    <title>Should I Buy the bag? Take the quizz now!</title>
+    <meta name="description" content="Take the quizz to find out if you really should buy the bag, the dress or this pair of shoes..." />
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/shouldibuythebag.png'); ?>" />
+
+    <!--  Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Playfair+Display|Yeseva+One" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-<div class="container-fluid">
+    <div class="container-fluid">
 
-    <header id="header" class="text-center">
-        <div id="bg"></div>
+        <header id="header" class="text-center">
+            <div id="bg"></div>
+            <nav class="navbar navbar-toggleable-sm navbar-light">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: auto;">
+                    <ul class="nav navbar-nav nav-pills">
+                        <li role="presentation" class="active"><a href="#items" class='nav-link'>Start the Quizz</a></li>
+                        <!-- <li role="presentation"><a href="#about" class='nav-link'>About</a></li> -->
+                        <!-- <li role="presentation"><a href="#contact" class='nav-link's>Contact</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+
             <h1>Should I buy the bag?</h1>
             <p>Facing a shopping crisis? Wondering if you really should buy that new thing?</p>
             <p>Answer this few questions right now to find out if you really should buy that new bag, dress or pair of shoes!</p>
-            <p><a id="cat_quizz" href="#items" class="btn btn-lg btn-outline-warning hvr-buzz">Take the quizz now</a></p>
-    </header>
+            <p><a id="cat_quizz" href="#items" class="btn btn-lg btn-outline-danger hvr-buzz">Take the quizz now</a></p>
+        </header>
+        <div class="hr"></div>
+        <section id="items" class="text-center">
 
-    <section id="items" class="text-center my-3">
+            <p id="pickanitem"><i>Click on one of the item below to start the quizz</i></p>
 
-        <p id="pickanitem"><i>Pick an item</i></p>
-
-        <div id="banner_item" class="row">
-            <div class="col-sm-12 col-md-4 my-3">
-            <form action="<?php echo base_url('index.php/quizz/buythebag')?>" method="post">
-                
-                    <button class="btn btn-default hvr-buzz" type="submit"><input type="hidden" name="item" value="bag"/><img src="<?php echo base_url('assets/images/bag.svg')?>"/></button>
-                     </form> 
+            <div id="banner_item" class="row">
+                <div class="col-sm-12 col-md-4 my-3">
+                    <form action="<?php echo base_url('quizz/buythebag')?>" method="post">
+                        <button class="btn btn-default hvr-buzz" type="submit">
+                            <input type="hidden" name="item" value="bag" /><img src="<?php echo base_url('assets/images/illubag.png')?>" /></button>
+                        <p class="my-3"><small>bag</small></p>
+                    </form>
                 </div>
-             <div class="col-sm-12 col-md-4 my-3">
-            <form action="<?php echo base_url('index.php/quizz/buythebag')?>" method="post">
-              
-                    <button class="btn btn-default hvr-buzz" type="submit"><input type="hidden" name="item" value="shoes"/><img src="<?php echo base_url('assets/images/shoe.svg')?>"></button>
-                     </form> 
+                <div class="col-sm-12 col-md-4 my-3">
+                    <form action="<?php echo base_url('quizz/buythebag')?>" method="post">
+                        <button class="btn btn-default hvr-buzz" type="submit">
+                            <input type="hidden" name="item" value="shoes" /><img src="<?php echo base_url('assets/images/shoesillu.png')?>"></button>
+                        <p class="my-3"><small>shoes</small></p>
+                    </form>
                 </div>
-            <div class="col-sm-12 col-md-4 my-3">
-            <form action="<?php echo base_url('index.php/quizz/buythebag')?>" method="post">
-                
-                    <button class="btn btn-default hvr-buzz" type="submit"><input type="hidden" name="item" value="dress"/><img src="<?php echo base_url('assets/images/dress.svg')?>"/></button>
-                    </form>  
+                <div class="col-sm-12 col-md-4 my-3">
+                    <form action="<?php echo base_url('quizz/buythebag')?>" method="post">
+                        <button class="btn btn-default hvr-buzz" type="submit">
+                            <input type="hidden" name="item" value="dress" /><img src="<?php echo base_url('assets/images/dressillu.png')?>" /></button>
+                        <p class="my-3"><small>dress</small></p>
+                    </form>
                 </div>
-             
+            </div>
+        </section>
+        <hr>
+        <!-- <section id="about" class="text-justify">
+        <h1>Should I buy the bag, the shoes, the dress?</h1>
+        <div id="about_intro" class="row" style="width: 75%; margin: auto;">
+            <div id="intro_txt" class="col-sm-12 col-md-6 my-3" > 
+                <p>We all been there, wondering if we should buy that magnificient piece of fashion knowing deep inside that we really shouldn't, for many reasons.</p>
+                <p> The quizz here will guide during your shopping crisis by asking couple of questions. Those you should really ask yourself before considering shopping, especially if you have doubts.</p>
+            </div>
+            <div id="intro_img" class="col-sm-12 col-md-6 text-center">
+                <img class="hvr-buzz"src="<?php echo base_url('assets/images/dress.svg')?>"/>
+            </div>
         </div>
-
+        <hr style="width: 50%;">
+        <div id="about_about">
+            <h3>About</h3>
+            <div class="row" style="width: 75%; margin: auto;">
+                <div id="about_img" class="col-sm-12 col-md-6 text-center">
+                    <img class="hvr-buzz"src="<?php echo base_url('assets/images/shoe.svg')?>"/>
+                </div>
+                <div id="about_txt" class="col-sm-12 col-md-6" > 
+                    <p>The idea came up when a friend of mine was harrasing us with the same question about a branded bag: "<i>Should I buy the bag?!</i>". My answer couldn't be anything else than "<i>That's your life, your money, decide for yourself.</i>".</p>
+                    <p>Too harsh. Having attitude wouldn't be the best. I've sent her a decision diagram about buying the bag or not. Do you like it? Do you really want it? Can you afford it?</p>
+                    <p>Plot twist: she bought the bag.</p>
+                    <p>Later, I realised we all face that situation where we need to ask ourself the good questions. And here it is, the quizz which will get you out of a shopping crisis. My attitude on top.</p>
+                    <p>You'll thank me later.</p>
+                </div>
+            </div>
+        </div>
+<hr>
+        <div id="about_questions" class="bs-callout bs-callout-default">
+            <h3>Questions?</h3>
+            <p> Are the questions proven scientifically and psychologicaly efficient? No.</p>
+            <p>Still, when you have a doubt, you turn to your friends for advice and no all friends are good advisers. Am I a good adviser? Please.</p>
+            <p>Is the quizz will unconditionnaly tell you not to buy stuffs? No, not really but start the quizz, you'll find out.</p>
+            <p>Is the quizz responsible for your bad shopping choices? No, be a grown up, be responsable for yourself.</p>
+            <p class="text-center">More questions? <a href="#contact">Please use the form below!</a></p>
+        </div>
     </section>
-    <footer class="text-center">
-        <hr/>
-        <small>Made with <i class="fa fa-heart-o" style="color: red;" aria-hidden="true"></i> by Anaïs, your friend with attitude. You'll thank me later.</small>
-        
-        <ul class="text-center">
-            <li><small class="text-right">Come & say thank you <i class="fa fa-bolt" aria-hidden="true" style="margin-left: 2em; color: yellow;"></i> </small></li>
-            <li><a href="https://twitter.com/AnaisGueyte" alt="twitter anais gueyte" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/agueyte/" alt="linkedin anais gueyte" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p></li>
-            <li><a href="https://github.com/AnaisGueyte" alt="github anais gueyte" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-            <li><a href="http://bit.ly/AnaisOnVinted" alt="vide dressing blogueuse mode" target="blank"><img id="vinted" src="<?php echo base_url('assets/images/vinted.svg')?>"/></a></li>
-        </ul>
-    </footer>
-</div>
+    <hr> 
+    <section id="contact" >
+        <div id="contact_bg"></div>
+                <div id="contact_form" class="col-sm-12 col-md-10 offset-md-1 bs-callout bs-callout-default my-3">
+                    <h1>Contact form</h1>
+                    <p>Say thank you!</p>
+                        <?php if(isset($error_email)){
+                                            echo ("<div class='alert alert-danger' role='alert'>");
+                                            echo($error_email);
+                                            echo("</div>");
+        }
+                        elseif(isset($my_email_sent)){
+                            echo ("<div class='alert alert-success' role='alert'>");
+                                            echo($my_email_sent);
+                                            echo("</div>");
+                        }
+                            elseif(isset($error_form)){
+                                echo ("<div class='alert alert-danger' role='alert'>");
+                                            echo($error_form);
+                                            echo("</div>");
+                            }; ?>
+                            <form method="POST" action="" role="form" id="contact-form" class="contact-form">
+                                <?php echo form_open('form'); ?>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <textarea class="form-control textarea" rows="3" name="message" id="message" placeholder="message"></textarea>
+                                            <button type="submit" class="btn btn-md btn-outline-primary pull-right my-3">Send</button>
+                                            <br>
+                                        </div>
+                                    </div>
+                            </form>
+                    </div>
+    </section>
+     <hr/> -->
+        <footer class="text-center full-width-div">
 
-<script src="<?php echo(AJAX_GOOGLE_API); ?>"></script>
-<script src="<?php echo(BOOTSTRAP_JS); ?>"></script>
-<script src="<?php echo(FONT_AWESOME); ?>"></script>
-<script src="<?php echo base_url('assets/js/start.js')?>"></script>
+            <small>Made with <i class="fa fa-heart-o" style="color: red;" aria-hidden="true"></i> by Anaïs, your friend with attitude. You'll thank me later.</small>
+            <div class="text-center mb-3">
+                <small>Come & say thank you <span><a href="https://twitter.com/AnaisGueyte" alt="twitter anais gueyte" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+            <span><a href="https://www.linkedin.com/in/agueyte/" alt="linkedin anais gueyte" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+            <span><a href="https://github.com/AnaisGueyte" alt="github anais gueyte" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a></span></small>
+            </div>
+        </footer>
+    </div>
+
+    <script src="<?php echo(AJAX_GOOGLE_API); ?>"></script>
+    <script src="<?php echo(BOOTSTRAP_JS); ?>"></script>
+    <script src="<?php echo(FONT_AWESOME); ?>"></script>
+    <script src="<?php echo base_url('assets/js/start.js')?>"></script>
 
 </body>
 

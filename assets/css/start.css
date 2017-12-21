@@ -1,43 +1,47 @@
-* {
-    font-family: 'Georgia', Times New Roman, serif;   	
-}
-
 html, body {
 	font-size: 16px;
+    width: 100%;
+    height: 100%;
 }
 
 header {
-	height: 40em;
-	width: 100%;
-	z-index: 5;
-    position: relative;	
+	height: 45em;
 }
 
 #bg{
 	position: absolute;
 	z-index: -1;
+	width: 100%;
+    height: 45em;
+   	max-width: 100%;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: url(../images/cintres.jpg) no-repeat center center fixed;
+	background: url(../images/bag.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   	opacity: 0.5;
-    filter: alpha(opacity=10);
+    filter: alpha(opacity=10);  
 }
 
 header h1{
 	font-size: 5em;
 	color: rgba(0, 0, 0, 1);
 	padding-top: 1em;
+	font-family: 'Yeseva One', cursive;
 }
 
 header p{
 	margin-top: 2.5em;
 	font-size: 1.5em;
+}
+
+p, a, li, i, small {
+    /*font-family: 'Bellefair', serif;*/
+    font-family: 'Playfair Display', serif;
 }
 
 #cat_quizz{
@@ -53,7 +57,11 @@ header p{
 
 #cat_quizz:hover{
 	color: white;
+	font-weight: bold;
 	border: 1px;
+	background-color: #6B0000;
+	opacity: 0.7;
+    filter: alpha(opacity=10);
 }
 
 .hvr-buzz {
@@ -66,13 +74,13 @@ header p{
 
 
 #items {
-	height: 40em;
+	height: 45em;
 	margin-top: 10em;
 	position: relative;
 }
 
 #pickanitem {
-	margin: 5em;
+	padding-top: 2em;
 }
 
 #banner_item{
@@ -80,30 +88,97 @@ header p{
 }
 
 #items img {
-	height: 10em;
-	width: 10em;
+	height: 15em;
+	width: 13em;
 }
 
 #items button{
 	background-color: white;
 }
 
-
-footer{
-	margin-bottom: 0px;
+#about {
+	height: 65em;
+	width:100%;
+	max-width: 100%;
 }
 
-footer li {
-    list-style-type: none;
-    display: inline-block;
-    text-align: center;
+
+
+#about {
+	padding: 2em;
+	display: inline-block;
+}
+#about h1{
+	font-size: 3em;
+	color: rgba(0, 0, 0, 1);
+}
+
+#about p{
+	font-size: 1.25em;
+	line-height: 1.5em;
+}
+
+#about img{
+	width: 8em;
+    height: 8em;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+
+#contact {
+	height: 30em;
+	position:relative;
+}
+
+#contact_bg{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+    height: 30em;
+   	max-width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url(../images/marbre.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  	opacity: 0.5;
+    filter: alpha(opacity=10);
+    
+}
+
+
+#contact_form {
+	padding-top: 2em;
+}
+
+footer{
+	height: 4em;
+	padding: 1em;
+	/*background-color: #F9FAFC;*/
+}
+
+.full-width-div{
+	position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+footer span {
     margin: 1em;
 }
 
-img {
+footer img {
 	width: 20px;
     height: 20px;
 }
+
 
 /*****************************  MEDIA QUERIES  *************************************/
 
@@ -126,28 +201,41 @@ header p{
 	font-size: 1.25em;
 }
 
-#banner_item{
-	margin-top: 1em;
+#items {
+	margin-top: 0.5em;
+	
+}
 
+#banner_item{
+	margin-top: 0.5em;
 }
 
 #items img {
-height: 8rem;
-width: 8rem;
+	height: 7rem;
+	width: 7rem;
+	
 }
 
-#items {
-	margin-top: 10em;
+#pickanitem {
+	margin: 1em;
 }
+
 
 }
 
+
+
+/****** MOBILE QUERIES ******/
 
 @media only screen 
 and (max-width: 400px) {
 
 	header {
-	height: 30em;	
+	height: 35em;	
+}
+
+#bg{
+    height: 35em; 
 }
 
 header h1{
@@ -159,32 +247,36 @@ header h1{
 header p{
 	padding-right: 1em;
 	padding-left: 1em;
-	margin-top: 1em;
-	font-size: 1.155em;
+	font-size: 1.2em;
 }
 
 #cat_quizz{
 	color: black;
 	border: 1px solid rgba(0, 0, 0, 1);
-	padding: 0.75em 0.75em;
     font-size: 1.125em;
     -webkit-border-radius: 0.5em;
        -moz-border-radius: 0.5em;
             border-radius: 0.5em;
 }
 
-#banner_item{
-	margin-top: 1em;
+#items {
+	margin-top: 0.5em;
+	
+}
 
+#banner_item{
+	margin-top: 0.5em;
 }
 
 #items img {
-height: 5rem;
-width: 5rem;
+	height: 7rem;
+	width: 7rem;
+	
 }
 
-#items {
-	margin-top: 10em;
+#pickanitem {
+	margin: 1em;
 }
+
 
 }
