@@ -30,9 +30,18 @@ class Quizz extends CI_Controller {
             $data['item'] = $item;
             $data['title'] = "Should I buy the ". $item ."?";
 
-            // If the user starts the quizz, create session
+            $head_data = array();
+            $head_data['title'] = "Should I buy the ". $item ."? Take the quizz now!";
+            $head_data['description'] = 'Take the quizz to find out if you really should buy the bag, the shoes or the dress or leave it!';
+            $head_data['css'] = base_url('assets/css/quizz.css');
+            $head_data['url'] = base_url();
+
+            $footer_data = array();
+            $footer_data['js'] = base_url('assets/js/quizz.js');
         
+            $this->load->view('templates/head', $head_data);
             $this->load->view('quizz', $data);
+            $this->load->view('templates/footer', $footer_data);
             
 
         } else {

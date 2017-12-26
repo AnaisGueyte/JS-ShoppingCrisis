@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
-
-    <!--  METAS FOR SEO-->
-    <title>Statistics: who should buy the bag?</title>
-    <meta name="description" content="Find out about how the other did on the test and who should buy the bag..." />
-
-
-    <!-- METAS OPENGRACH -->
-    <meta property="og:url"           content="https://shouldibuythebag.com/statistic/seethestats" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Statistics: who should buy the bag?" />
-    <meta property="og:description"   content="They also took the test, find out their answers..." />
-    <meta property="og:image"         content="<?php echo base_url('assets/images/bag.jpg'); ?>" />
-
-
-    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/shouldibuythebag.png'); ?>" />
-
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/statistic.css')?>" />
-
-
-    <!--  Link to Bootstrap online: « Content delivery network » CDN-->
-    <link href="<?php echo(BOOTSTRAP_CDN); ?>" rel="stylesheet">
-
-    <!--  Link to script tracking-->
-    <script src="<?php echo base_url('assets/js/hotjar_script.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/ga_script.js') ?>"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
-
-    <!--  Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=Bellefair|Playfair+Display|Yeseva+One" rel="stylesheet">
-
-</head>
-
 <body>
 <div class="container-fluid">
     <section class="header">
@@ -247,21 +207,3 @@
     </div>
   </div>
 </div>
-
-<script src="<?php echo(AJAX_GOOGLE_API); ?>"></script>
-<script src="<?php echo(BOOTSTRAP_JS); ?>"></script>
-<script src="<?php echo(FONT_AWESOME); ?>"></script>
-<script src="<?php echo base_url('assets/js/statistic.js') ?>"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- shouldibuythebag -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4208461125657780"
-     data-ad-slot="1057141746"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-</body>
-</html>
