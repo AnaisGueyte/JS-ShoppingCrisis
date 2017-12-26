@@ -11,8 +11,8 @@ class Statistic extends CI_Controller {
     public function seethestats()
 	{
 		//Add cache of 60 days
-		$n = 86400;
-		$this->output->cache($n);
+		/*$n = 86400;
+		$this->output->cache($n);*/
 
         // Call the function and get raw datas
         $podium = $this->getPodium();
@@ -60,24 +60,8 @@ class Statistic extends CI_Controller {
         $data['totalEndingQuestionName'] = $endingQuestionName;
 
 
-        // Head & Footer datas
-        $head_data = array();
-        $head_data['title'] = "Should I buy the bag? Statistics: who should buy the bag?";
-        $head_data['description'] = 'They also took the test, find out their answers...';
-        $head_data['css'] = base_url('assets/css/statistic.css');
-        $head_data['url'] = base_url('statistic/seethestats');
-
-        $footer_data = array();
-        $footer_data['js'] = base_url('assets/js/statistic.js');
-    
         // Load view
-        $this->load->view('templates/head', $head_data);
         $this->load->view('statistic', $data);
-        $this->load->view('templates/footer', $footer_data);
-
-
-        
-        
 	}   
 
 

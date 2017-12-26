@@ -44,14 +44,6 @@ p, button{
     font-family: 'Playfair Display', serif;
 }
 
-#content_zone{
-	height: auto;
-    min-height: 25em;
-}
-
-#question_zone{
-	margin-top: 2em;
-}
 
 .card-block p {
 	font-size: 2em;

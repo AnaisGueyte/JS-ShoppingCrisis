@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/start.css'); ?>" />
+    <link href="<?php echo base_url('assets/css/hover-min.css')?>" "" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+
+    <!--  Link to Bootstrap online: « Content delivery network » CDN-->
+    <link href="<?php echo(BOOTSTRAP_CDN); ?>" rel="stylesheet">
+    <script src="<?php echo base_url('assets/js/hotjar_script.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/ga_script.js') ?>"></script>
+
+
+    <!--  METAS FOR SEO-->
+    <title>Should I Buy the bag? Take the quizz now!</title>
+    <meta name="description" content="Take the quizz to find out if you really should buy the bag, the dress or this pair of shoes..." />
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/shouldibuythebag.png'); ?>" />
+
+    <!--  Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Playfair+Display|Yeseva+One" rel="stylesheet">
+
+
+</head>
+
 <body>
 
     <div class="container-fluid">
@@ -20,9 +47,7 @@
             <p>Answer this few questions right now to find out if you really should buy that new bag, dress or pair of shoes!</p>
             <p><a id="cat_quizz" href="#items" class="btn btn-lg btn-outline-danger hvr-buzz">Take the quizz now</a></p>
         </header>
-
         <div class="hr"></div>
-
         <section id="items" class="text-center">
 
             <p id="pickanitem"><i>Click on one of the item below to start the quizz</i></p>
@@ -88,54 +113,54 @@
             <p>Is the quizz responsible for your bad shopping choices? No, be a grown up, be responsable for yourself.</p>
             <p class="text-center">More questions? <a href="#contact">Please use the form below!</a></p>
         </div>
-        </section>
-        <hr> 
-        <section id="contact" >
-            <div id="contact_bg"></div>
-                    <div id="contact_form" class="col-sm-12 col-md-10 offset-md-1 bs-callout bs-callout-default my-3">
-                        <h1>Contact form</h1>
-                        <p>Say thank you!</p>
-                            <?php if(isset($error_email)){
-                                                echo ("<div class='alert alert-danger' role='alert'>");
-                                                echo($error_email);
-                                                echo("</div>");
-            }
-                            elseif(isset($my_email_sent)){
-                                echo ("<div class='alert alert-success' role='alert'>");
-                                                echo($my_email_sent);
-                                                echo("</div>");
-                            }
-                                elseif(isset($error_form)){
-                                    echo ("<div class='alert alert-danger' role='alert'>");
-                                                echo($error_form);
-                                                echo("</div>");
-                                }; ?>
-                                <form method="POST" action="" role="form" id="contact-form" class="contact-form">
-                                    <?php echo form_open('form'); ?>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="email">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
+    </section>
+    <hr> 
+    <section id="contact" >
+        <div id="contact_bg"></div>
+                <div id="contact_form" class="col-sm-12 col-md-10 offset-md-1 bs-callout bs-callout-default my-3">
+                    <h1>Contact form</h1>
+                    <p>Say thank you!</p>
+                        <?php if(isset($error_email)){
+                                            echo ("<div class='alert alert-danger' role='alert'>");
+                                            echo($error_email);
+                                            echo("</div>");
+        }
+                        elseif(isset($my_email_sent)){
+                            echo ("<div class='alert alert-success' role='alert'>");
+                                            echo($my_email_sent);
+                                            echo("</div>");
+                        }
+                            elseif(isset($error_form)){
+                                echo ("<div class='alert alert-danger' role='alert'>");
+                                            echo($error_form);
+                                            echo("</div>");
+                            }; ?>
+                            <form method="POST" action="" role="form" id="contact-form" class="contact-form">
+                                <?php echo form_open('form'); ?>
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <textarea class="form-control textarea" rows="3" name="message" id="message" placeholder="message"></textarea>
-                                                <button type="submit" class="btn btn-md btn-outline-primary pull-right my-3">Send</button>
-                                                <br>
+                                                <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="name">
                                             </div>
                                         </div>
-                                </form>
-                        </div>
-        </section>
-         <hr/> -->
-        <section class="text-center full-width-div">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <textarea class="form-control textarea" rows="3" name="message" id="message" placeholder="message"></textarea>
+                                            <button type="submit" class="btn btn-md btn-outline-primary pull-right my-3">Send</button>
+                                            <br>
+                                        </div>
+                                    </div>
+                            </form>
+                    </div>
+    </section>
+     <hr/> -->
+        <footer class="text-center full-width-div">
 
             <small>Made with <i class="fa fa-heart-o" style="color: red;" aria-hidden="true"></i> by Anaïs, your friend with attitude. You'll thank me later.</small>
             <div class="text-center mb-3">
@@ -143,7 +168,14 @@
             <span><a href="https://www.linkedin.com/in/agueyte/" alt="linkedin anais gueyte" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
             <span><a href="https://github.com/AnaisGueyte" alt="github anais gueyte" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a></span></small>
             </div>
-        </section>
+        </footer>
     </div>
 
+    <script src="<?php echo(AJAX_GOOGLE_API); ?>"></script>
+    <script src="<?php echo(BOOTSTRAP_JS); ?>"></script>
+    <script src="<?php echo(FONT_AWESOME); ?>"></script>
+    <script src="<?php echo base_url('assets/js/start.js')?>"></script>
 
+</body>
+
+</html>
