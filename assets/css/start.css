@@ -8,6 +8,10 @@ header {
 	height: 45em;
 }
 
+.nav-link{
+	color: rgba(0,0,0,0.9) !important;
+}
+
 #bg{
 	position: absolute;
 	z-index: -1;

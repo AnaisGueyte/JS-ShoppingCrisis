@@ -3,6 +3,29 @@
     padding-left: 0px !important;
 }
 
+/** GLOBAL **/
+
+h1 {
+    font-family: 'Yeseva One', cursive !important;
+    text-align: center;
+}
+
+p, h5, li {
+    /*font-family: 'Bellefair', serif;*/
+    font-family: 'Playfair Display', serif;
+}
+
+.modal-title{
+    font-family: 'Playfair Display', serif;
+}
+
+.content{
+    margin-top: 3em; 
+    text-align: center;
+}
+
+
+/** HEADER **/
 .header{
 	background-image: url(https://shouldibuythebag.com/assets/images/wedding-dresses.jpeg);
     background-size: cover;
@@ -12,6 +35,7 @@
 
 .header h1{
     font-family: 'Yeseva One', cursive;
+    font-size: 5em;
 	text-align: center;
     position: relative;
     top: 45%;
@@ -20,28 +44,15 @@
     -ms-transform: translateY(-45%);
 }
 
+/** MAIN STATS SECTION  **/
 .main-stats{
     /*height: 30em;*/
     margin-top: 5em;
     margin-bottom: 5em;
     }
 
-.main-stats .row{
-    /*position: relative;
-    top: 45%;
-    transform: translateY(-45%);
-    -webkit-transform: translateY(-45%);*/
-}
-
-h1{
-    font-family: 'Yeseva One', cursive !important;
-    text-align: center;
-}
-
-p{
-    /*font-family: 'Bellefair', serif;*/
-    font-family: 'Playfair Display', serif;
-
+#myChart{
+    margin-top: 2em;
 }
 
 .main-stats p{
@@ -50,45 +61,123 @@ p{
     font-size: 1.25em;
 }
 
-.number-quizz span{
+#totalQuizz{
 	font-weight: bold;
     font-size: 2em;
 }
 
-.main-stats-image{
+.main-stats .main-stats-image{
     text-align: center;
 }
 
-.main-stats-image img{
+.main-stats .main-stats-image img{
     max-width: 100%;
     max-height: 100%;
 }
 
+
+/** IMAGE SECTION  **/
+.image-banner{
+    text-align: center;
+    margin: 0 auto 5em;
+}
+
+.image-banner img{
+    width: 100%;
+}
+
+
+/** ON REPEAT SECTION  **/
 .section-repeat{
     /*height: 30em;*/
     width: 80%;
     margin: 0 auto 5em;
     text-align: center;
-    border: 2px dotted #f48fb1;
+    border: 2px solid #f48fb1;
     border-radius: 5px;
     padding: 5em;
     }
 
-.user-repeat{
+.section-repeat .user-repeat{
     /*position: relative;
     top: 45%;
     transform: translateY(-45%);
     -webkit-transform: translateY(-45%);*/
 }
 
+/** ANSWERS SECTION  **/
 .section-answers{
-    height: 30em;
+    /*height: 30em;*/
     margin-bottom: 5em;
 }
 
-.section-answers .row{
-    position: relative;
-    top: 45%;
-    transform: translateY(-45%);
-    -webkit-transform: translateY(-45%);
+.section-answers .row-grid{
+    justify-content: center;
 }
+
+.section-answers .grid-answers{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 2px 2px 2px 2px;
+    padding: 3em 2em 2em 2em;
+}
+
+.section-answers .grid-answers img{
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.no-margin-bottom{
+    margin: 0 !important;
+}
+
+/** GIF POLL SECTION  **/
+
+.favorite-gif-section{
+    /*background-color: #eceff1;*/
+}
+
+.favorite-gif-poll h1{
+    /*padding-top: 2em;*/
+    margin-bottom: 2em;
+}
+
+.card{
+    margin-bottom: 1em;
+}
+.card-columns{
+    width: 80%;
+    margin: 0 auto;
+}
+.card .card-img-top{
+    width: 100%;
+}
+
+.card-block h4{
+    font-family: 'Yeseva One', cursive;
+}
+
+.card-footer{
+    text-align: right;
+}
+
+
+/** MODAL **/
+
+.modal-body{
+    margin: 0 auto !important;
+}
+
+.modal-body a{
+    margin: 1em;
+}
+
+
+
+
+
+
+
+
+

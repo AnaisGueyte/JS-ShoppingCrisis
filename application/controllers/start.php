@@ -9,6 +9,8 @@ class Start extends CI_Controller {
     
     public function welcome()
 	{
+		/*$n = 86400;
+		$this->output->cache($n);*/
         $this->load->view('start');
 	}   
 }

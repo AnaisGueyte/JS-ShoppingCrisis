@@ -220,6 +220,8 @@ $(document).ready(function () {
 
     $('#question_title').append(q1_likeit);
     startTheQuizz();
+
+    console.log('hello');
 }); // END OF DOCUMENT READY
 
 
@@ -806,7 +808,7 @@ function q_priceRange() {
     $('#question_title').append(q_pricerangetitle);
     $('#buttons_zone').empty();
 
-    /* analytics_pricerange = true; */
+    analytics_pricerange = true; 
 
     // price range 
 
@@ -891,6 +893,7 @@ function q_reallyAffordIt() {
         } else {
             q_rewardYourself();
             analytics_reallyaffordit_answer = "yes";
+            console.log(analytics_reallyaffordit_answer);
         }
     });
 }
@@ -923,7 +926,7 @@ function q_rewardYourself() {
             console.log("in the if question title is different");
         } else {
             console.log("in th yes else function");
-            /*analytics_rewardyourself_answer = "yes";*/
+            analytics_rewardyourself_answer = "yes";
             console.log("in th yes else function after analytics");
             treatYoSelf(q_rewardyourself);
             console.log("in th yes else function after call function treatYoSelf");
@@ -1002,6 +1005,7 @@ function treatYoSelf(question_title) {
 
     analyticsquizz_complete = true;
     analytics_end = question_title;
+    console.log('treatYoSelf');
 }
 
 function jeezDontBuyIt(question_title) {
@@ -1013,7 +1017,7 @@ function jeezDontBuyIt(question_title) {
 
     analyticsquizz_complete = true;
     analytics_end = question_title;
-
+    console.log('jeez dont buy it');
 }
 
 function lifeIsTooShort(question_title) {
@@ -1025,6 +1029,7 @@ function lifeIsTooShort(question_title) {
 
     analyticsquizz_complete = true;
     analytics_end = question_title;
+    console.log('life is too short');
 }
 
 
@@ -1039,14 +1044,17 @@ function addButtons() {
 
 function backHome() {
     analytics_return_end = true;
-    sendQuizzData();
     window.location.href = "https://shouldibuythebag.com";
+    sendQuizzData();
+    console.log('back home');
 }
 
 $('#quit').click(function (e) {
     analytics_quit_end = true;
-    sendQuizzData();
     window.location.href = "https://shouldibuythebag.com";
+    console.log('quit');
+    sendQuizzData();
+    
 });
 
 $(window).on("beforeunload", function () {
@@ -1059,6 +1067,7 @@ $(window).on("beforeunload", function () {
 // function to call when user quit, press return or leave the window
 
 function sendQuizzData() {
+
     console.log("call the ajax function");
     $.ajax({
         type: "POST",
@@ -1123,9 +1132,11 @@ function sendQuizzData() {
         dataType: "json",
         success: function (response) {
             console.log("ajax success");
+            console.log(response);
         },
-        error: function (result) {
+        error: function (response) {
             console.log("fail");
+            console.log(response);
         }
     });
 }

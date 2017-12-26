@@ -53,7 +53,6 @@
 <script src="<?php echo(BOOTSTRAP_JS); ?>"></script>
 <script src="<?php echo(FONT_AWESOME); ?>"></script>
 <script src="<?php echo base_url('assets/js/quizz.js')?>"></script>
-<script src="<?php echo base_url('assets/js/quizzdata.js')?>"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- shouldibuythebag -->
 <ins class="adsbygoogle"

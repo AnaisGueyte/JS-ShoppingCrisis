@@ -5,11 +5,16 @@ class Statistic extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper(array('form', 'security','html', 'url'));
+        $this->load->library('session');
     }
     
     public function seethestats()
 	{
+		//Add cache of 60 days
+		/*$n = 86400;
+		$this->output->cache($n);*/
 
+        // Call the function and get raw datas
         $podium = $this->getPodium();
         $totalQuizz = $this->getTotalQuizz();
         $totalQuizzEnded = $this->getTotalQuizzEnded();
@@ -18,18 +23,28 @@ class Statistic extends CI_Controller {
         $totalDontLikeIt = $this->getDontLikeIt();
         $totalOnlineShopper = $this->getTotalOnlineShopper();
         $totalInfluencer = $this->getTotalInfluencer();
+        $endingQuestion = $this->getEndingQuestion();
 
-        $totalBuyIt = (($totalQuizzBuyIt['totalQuizzBuyIt'] + $totalQuizzBuyIt['totalQuizzLifeTooShort']) / $totalQuizzEnded['totalQuizzEnded']) * 100;
+
+        // Convert datas
+        $positiveAnswer = ($totalQuizzBuyIt['totalQuizzBuyIt'] + $totalQuizzBuyIt['totalQuizzLifeTooShort']);
+        $endingQuestionNameArray =  explode("?", $endingQuestion['totalEndingQuestionName'], 2);
+        $endingQuestionName = $endingQuestionNameArray[0];
+
+        // Get percentage
+        $totalBuyIt =  $this->getPercentage($positiveAnswer, $totalQuizzEnded['totalQuizzEnded']);
         $totalQuit = $totalQuizz['totalQuizz'] - $totalQuizzEnded['totalQuizzEnded'];
-        $percentageUserRepeat = ($totalUserRepeat['totalUserRepeat'] / $totalUserRepeat['totalUser']) * 100;
-        $percentageDontLikeIt = ($totalDontLikeIt['totalDontLikeIt'] / $totalQuizz['totalQuizz']) * 100;
-        $totalOnlineShopper = ($totalOnlineShopper['totalOnlineShopper'] / $totalQuizz['totalQuizz']) * 100; 
-        $totalInfluencer = ($totalInfluencer['totalInfluencer'] / $totalQuizz['totalQuizz']) * 100; 
+        $percentageUserRepeat = $this->getPercentage($totalUserRepeat['totalUserRepeat'], $totalUserRepeat['totalUser']);
+        $percentageDontLikeIt = $this->getPercentage($totalDontLikeIt['totalDontLikeIt'], $totalQuizz['totalQuizz']);
+        $totalOnlineShopper = $this->getPercentage($totalOnlineShopper['totalOnlineShopper'], $totalQuizz['totalQuizz']); 
+        $totalInfluencer = $this->getPercentage($totalInfluencer['totalInfluencer'], $totalQuizz['totalQuizz']); 
+        $totalBag = $this->getPercentage($podium['totalBag'], $totalQuizz['totalQuizz']);
+        $totalDress = $this->getPercentage($podium['totalDress'], $totalQuizz['totalQuizz']);
+        $totalShoes = $this->getPercentage($podium['totalShoes'], $totalQuizz['totalQuizz']);
+        $totalEndingQuestion = $this->getPercentage($endingQuestion['totalEndingQuestion'], $totalQuizz['totalQuizz']);
 
-        $totalBag = ($podium['totalBag'] / $totalQuizz['totalQuizz']) * 100;
-        $totalDress = ($podium['totalDress'] / $totalQuizz['totalQuizz']) * 100;
-        $totalShoes = ($podium['totalShoes'] / $totalQuizz['totalQuizz']) * 100;
 
+        // Create array for view page
         $data['totalBag'] = number_format($totalBag, 0);
         $data['totalDress'] = number_format($totalDress, 0);
         $data['totalShoes'] = number_format($totalShoes, 0);
@@ -41,10 +56,37 @@ class Statistic extends CI_Controller {
         $data['totalDontLikeIt'] = number_format($percentageDontLikeIt, 0);
         $data['totalOnlineShopper'] = number_format($totalOnlineShopper, 0);
         $data['totalInfluencer'] = number_format($totalInfluencer, 0);
+        $data['totalEndingQuestion'] = number_format($totalEndingQuestion, 0);
+        $data['totalEndingQuestionName'] = $endingQuestionName;
 
+
+        // Load view
         $this->load->view('statistic', $data);
 	}   
 
+
+    /** Refacto percentage **/
+
+    public function getPercentage($value1, $value2){
+
+        $result = ($value1 / $value2) * 100;
+
+        return $result;
+
+    }
+
+    /** Refacto get value out of foreach **/
+    public function getValueWithForeach($myBDDdata){
+
+            foreach ($myBDDdata as $item) {
+
+                foreach ($item as $label => $value) {
+                    $finalValue = $value;  
+                }
+            }
+
+        return $finalValue;
+    }
 
     public function getTotalQuizz(){
 
@@ -52,17 +94,12 @@ class Statistic extends CI_Controller {
 
         $totalQuizz = $this->statistics->getTotalQuizz();
 
-        foreach ($totalQuizz as $item) {
-
-            foreach ($item as $label => $value) {
-                $totalQuizz = $value;  
-            }
-        }
-
-        $data['totalQuizz'] = $totalQuizz;
+        $data['totalQuizz'] = $this->getValueWithForeach($totalQuizz);
 
         return $data;
     }
+
+
 
     public function getTotalQuizzEnded(){
 
@@ -70,14 +107,7 @@ class Statistic extends CI_Controller {
 
         $totalQuizzEnded = $this->statistics->getTotalQuizzCompleted();
 
-        foreach ($totalQuizzEnded as $item) {
-
-            foreach ($item as $label => $value) {
-                $totalQuizzEnded = $value;  
-            }
-        }
-
-        $data['totalQuizzEnded'] = $totalQuizzEnded;
+        $data['totalQuizzEnded'] = $this->getValueWithForeach($totalQuizzEnded);
 
         return $data;
     }
@@ -87,27 +117,10 @@ class Statistic extends CI_Controller {
         $this->load->model('statistics');
 
         $totalQuizzBuyIt = $this->statistics->getTotalQuizzBuyIt();
-
-        foreach ($totalQuizzBuyIt as $item) {
-
-            foreach ($item as $label => $value) {
-                $totalQuizzBuyIt = $value;  
-            }
-        }
-
-        $data['totalQuizzBuyIt'] = $totalQuizzBuyIt;
-
         $totalQuizzLifeTooShort =  $this->statistics->getTotalQuizzLifeTooShort();
-
-        foreach ($totalQuizzLifeTooShort as $item) {
-
-            foreach ($item as $label => $value) {
-                $totalQuizzLifeTooShort = $value;  
-            }
-        }
-
-
-        $data['totalQuizzLifeTooShort'] = $totalQuizzLifeTooShort;
+        
+        $data['totalQuizzBuyIt'] = $this->getValueWithForeach($totalQuizzBuyIt);
+        $data['totalQuizzLifeTooShort'] = $this->getValueWithForeach($totalQuizzLifeTooShort);
 
         return $data;
     }
@@ -181,13 +194,7 @@ class Statistic extends CI_Controller {
 
         $totalDontLikeIt = $this->statistics->getTotalAnswerNoFirstQuestion();
 
-        foreach ($totalDontLikeIt as $item) {
-            foreach ($item as $label => $value) {
-                $totalDontLikeIt = $value; 
-             }
-        }
-
-        $data['totalDontLikeIt'] = $totalDontLikeIt;
+        $data['totalDontLikeIt'] = $this->getValueWithForeach($totalDontLikeIt);
 
         return $data;
     }
@@ -198,33 +205,45 @@ class Statistic extends CI_Controller {
 
         $totalOnlineShopper = $this->statistics->getTotalOnlineShopper();
 
-        foreach ($totalOnlineShopper as $item) {
-            foreach ($item as $label => $value) {
-                $totalOnlineShopper = $value; 
-             }
-        }
-
-        $data['totalOnlineShopper'] = $totalOnlineShopper;
+        $data['totalOnlineShopper'] = $this->getValueWithForeach($totalOnlineShopper);
 
         return $data;
     }
 
     public function getTotalInfluencer(){
 
-            $this->load->model('statistics');
+        $this->load->model('statistics');
 
-            $totalInfluencer = $this->statistics->getTotalInfluencer();
+        $totalInfluencer = $this->statistics->getTotalInfluencer();
 
-            foreach ($totalInfluencer as $item) {
-                foreach ($item as $label => $value) {
-                    $totalInfluencer = $value; 
-                 }
-            }
+        $data['totalInfluencer'] = $this->getValueWithForeach($totalInfluencer);
 
-            $data['totalInfluencer'] = $totalInfluencer;
-
-            return $data;
+        return $data;
         }
 
+    public function getEndingQuestion(){
 
+        $this->load->model('statistics');
+
+        $endingQuestionArray = $this->statistics->endingQuestion();
+
+        foreach ($endingQuestionArray as $item) {
+
+            foreach ($item as $label => $value) {
+
+                    if($label == 'total'){
+                        $data['totalEndingQuestion'] = $value;
+                    }    
+                    
+                    if($label == 'label'){
+                       $data['totalEndingQuestionName'] = $value;
+
+                    }
+            }
+
+            break;
+        }
+
+        return $data;
+    }
 }
