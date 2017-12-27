@@ -53,6 +53,10 @@ p, button{
 	margin-top: 2em;
 }
 
+.return_button a{
+	margin: 1em;
+}
+
 .card-block p {
 	font-size: 2em;
 }

@@ -115,6 +115,16 @@ p, a, li, i, small {
 #about h1{
 	font-size: 3em;
 	color: rgba(0, 0, 0, 1);
+	font-family: 'Yeseva One', cursive;
+	text-align: center;
+}
+
+#about h1, h3{
+	font-family: 'Yeseva One', cursive;
+}
+
+#about p{
+	 font-family: 'Playfair Display', serif;
 }
 
 #about p{
@@ -122,9 +132,60 @@ p, a, li, i, small {
 	line-height: 1.5em;
 }
 
-#about img{
-	width: 8em;
-    height: 8em;
+#intro_img img{
+	width: 100%;
+	height: auto;
+}
+
+#about_img img{
+	width: 100%;
+	height: auto;
+}
+
+#about_intro{
+	width: 80%;
+    margin: 5em auto;
+}
+
+#about_about{
+    margin-top: 4em;
+    }
+
+#about_about h3{
+	font-family: 'Yeseva One', cursive;
+	text-align: center;
+}
+
+#about_about p{
+	font-family: 'Playfair Display', serif;
+}
+
+#about_txt{
+	width: 80%;
+    margin: 5em auto;
+}
+
+#about_txt #emoji img{
+	width: 25px !important; 
+	height: 25px !important;
+}
+
+#about_img{
+	margin: 5em auto;
+}
+
+
+#about_questions{
+	width: 80%;
+    margin: 3em auto;
+}
+
+#about_questions h3{
+	font-family: 'Yeseva One', cursive;
+}
+
+.questions_area{
+	margin-top: 5em;
 }
 
 .text-justify {
@@ -133,8 +194,10 @@ p, a, li, i, small {
 
 
 #contact {
-	height: 30em;
-	position:relative;
+	/*height: 30em;
+	position:relative;*/
+	    width: 70%;
+    margin: 0 auto;
 }
 
 #contact_bg{
@@ -160,6 +223,17 @@ p, a, li, i, small {
 
 #contact_form {
 	padding-top: 2em;
+}
+
+#contact_form h1{
+	font-family: 'Yeseva One', cursive;
+}
+
+
+form{
+
+	margin-top: 4em;
+    margin-bottom: 4em;
 }
 
 footer{

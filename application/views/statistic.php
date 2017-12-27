@@ -5,9 +5,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: auto;">
                     <ul class="nav navbar-nav nav-pills">
                         <li role="presentation" class="active"><a href="https://shouldibuythebag.com/#items" class='nav-link'>Start the Quizz</a></li>
-                        <!-- <li role="presentation"><a href="#about" class='nav-link'>About</a></li> -->
-                        <!-- <li role="presentation"><a href="#contact" class='nav-link's>Contact</a></li> -->
-                        <!-- <li role="presentation"><a href="#contact" class='nav-link's>Contact</a></li> -->
+                        <li role="presentation"><a href="https://shouldibuythebag.com/#about" class='nav-link'>About</a></li>
+                        <li role="presentation"><a href="https://shouldibuythebag.com/#contact" class='nav-link's>Contact</a></li>
                     </ul>
                 </div>
             </nav>
