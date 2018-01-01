@@ -15,7 +15,7 @@ var jeezdontbuyit = "Jeez! Don't buy it!";
 var jeezdontbuyit_gif = '<p><iframe src="https://giphy.com/embed/EsmlrgWNx5v0Y" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>';
 var treatyoself_gif = '<p><iframe src="https://giphy.com/embed/lAbxg2qCfOwKY" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>';
 var lifetooshort_gif = '<p><iframe src="https://giphy.com/embed/iIneJpUbaEZva" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>';
-var return_button = '<p><a class="btn btn-outline-info" onclick="backHome()">Return</a></p>';
+var return_button = '<div class="return_button"><button class="btn btn-outline-info" onclick="backHome()">Return</button><a class="btn btn-outline-info" href="https://shouldibuythebag.com/statistic/seethestats">See stats</a></div>';
 
 
 // List of questions and their no answer

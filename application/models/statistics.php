@@ -72,23 +72,9 @@ class Statistics extends CI_Model {
     }
 
     public function endingQuestion(){
-        $endingQuestionArray = "SELECT COUNT(`q_end`) as total, CONCAT(shouldibuythebag.q_end) as label FROM `shouldibuythebag` GROUP BY `q_end` ORDER BY `total` DESC ";
+        $endingQuestionArray = "SELECT COUNT(q_end) as total, CONCAT(shouldibuythebag.q_end) as label FROM shouldibuythebag WHERE q_end IS NOT NULL AND TRIM(q_end) <> '' GROUP BY q_end ORDER BY total DESC";
         $query =  $this->db->query($endingQuestionArray);
         return $query->result();
-    }
-    
-    public function someoneLikeGif(){
-        /** When an user (via session id) likes a gif, take its session and gif name and add it to the table**/
-        /** trigger the total_likes of a gif_name **/
-    }
-
-    public function someoneDislikeGif(){
-        /** When an user (via session id) dilikes a gif, take its session and gif name and add it to the table**/
-        /** trigger the total_likes of a gif_name **/
-    }
-
-    public function showUserFavGif(){
-        /** When a user is loading the stats page, check if its has a fav_gif, if not, return false **/
     }
 }
     

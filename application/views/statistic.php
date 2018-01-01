@@ -2,14 +2,17 @@
 <div class="container-fluid">
     <section class="header">
         <nav class="navbar navbar-toggleable-sm navbar-light">
-                <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: auto;">
-                    <ul class="nav navbar-nav nav-pills">
-                        <li role="presentation" class="active"><a href="https://shouldibuythebag.com/#items" class='nav-link'>Start the Quizz</a></li>
-                        <li role="presentation"><a href="https://shouldibuythebag.com/#about" class='nav-link'>About</a></li>
-                        <li role="presentation"><a href="https://shouldibuythebag.com/#contact" class='nav-link's>Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li role="presentation" class="nav-item active"><a href="<?php echo base_url('#items')?>" class='nav-link'>Start the Quizz</a></li>
+                    <li role="presentation" class="nav-item"><a href="<?php echo base_url('#about')?>" class='nav-link'>About</a></li>
+                    <li role="presentation" class="nav-item"><a href="<?php echo base_url('#contact')?>" class='nav-link'>Contact</a></li>
+                </ul>
+            </div>
+        </nav>
         <h1>Curious about how the others did on the test?</h1>
     </section>
 </div>

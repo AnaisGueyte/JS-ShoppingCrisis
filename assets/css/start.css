@@ -1,360 +1,458 @@
-html, body {
+
+html, body
+{
 	font-size: 16px;
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-header {
-	height: 45em;
+h1, h2, h3, h4
+{
+	font-family: 'Yeseva One', cursive;
 }
 
-.nav-link{
+p, a, li, i, small
+{
+	/*font-family: 'Bellefair', serif;
+	*/
+	font-family: 'Playfair Display', serif;
+}
+
+.text-justify
+{
+	text-align: justify;
+}
+
+.text-center
+{
+	text-align: center;
+}
+
+.width-50
+{
+	width: 50%;
+}
+
+/** HEADER **/
+header
+{
+	height: 40em;
+}
+
+.nav-link
+{
 	color: rgba(0,0,0,0.9) !important;
 }
 
-#bg{
+#bg
+{
 	position: absolute;
 	z-index: -1;
 	width: 100%;
-    height: 45em;
-   	max-width: 100%;
+	height: 40em;
+	max-width: 100%;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	background: url(../images/bag.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  	opacity: 0.5;
-    filter: alpha(opacity=10);  
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity: 0.5;
+	filter: alpha(opacity=10);
 }
 
-header h1{
+header h1
+{
 	font-size: 5em;
 	color: rgba(0, 0, 0, 1);
 	padding-top: 1em;
 	font-family: 'Yeseva One', cursive;
 }
 
-header p{
+header p
+{
 	margin-top: 2.5em;
 	font-size: 1.5em;
 }
 
-p, a, li, i, small {
-    /*font-family: 'Bellefair', serif;*/
-    font-family: 'Playfair Display', serif;
-}
-
-#cat_quizz{
+/** ITEM AREA **/
+#cat_quizz
+{
 	color: black;
 	border: 2px solid rgba(0, 0, 0, 1);
 	padding: 1em 1em;
-    font-size: 1em; 
-    line-height: normal;
-    -webkit-border-radius: 0.5em;
-       -moz-border-radius: 0.5em;
-            border-radius: 0.5em;
+	font-size: 1em;
+	line-height: normal;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
 }
 
-#cat_quizz:hover{
+#cat_quizz:hover
+{
 	color: white;
 	font-weight: bold;
 	border: 1px;
 	background-color: #6B0000;
 	opacity: 0.7;
-    filter: alpha(opacity=10);
+	filter: alpha(opacity=10);
 }
 
-.hvr-buzz {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
+.hvr-buzz
+{
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
 }
 
-
-#items {
+#items
+{
 	height: 45em;
 	margin-top: 10em;
 	position: relative;
 }
 
-#pickanitem {
+#pickanitem
+{
 	padding-top: 2em;
 }
 
-#banner_item{
+#banner_item
+{
 	margin-top: 5em;
 }
 
-#items img {
+#items img
+{
 	height: 15em;
 	width: 13em;
 }
 
-#items button{
+#items button
+{
 	background-color: white;
 }
 
-#about {
-	height: 65em;
+/** ABOUT AREA **/
+#about
+{
+	height: auto;
 	width:100%;
 	max-width: 100%;
-}
-
-
-
-#about {
 	padding: 2em;
 	display: inline-block;
 }
-#about h1{
+
+#about h1
+{
 	font-size: 3em;
 	color: rgba(0, 0, 0, 1);
 	font-family: 'Yeseva One', cursive;
 	text-align: center;
 }
 
-#about h1, h3{
+#about h3
+{
 	font-family: 'Yeseva One', cursive;
 }
 
-#about p{
-	 font-family: 'Playfair Display', serif;
-}
-
-#about p{
+#about p
+{
+	font-family: 'Playfair Display', serif;
 	font-size: 1.25em;
 	line-height: 1.5em;
 }
 
-#intro_img img{
-	width: 100%;
-	height: auto;
-}
-
-#about_img img{
-	width: 100%;
-	height: auto;
-}
-
-#about_intro{
+#about_intro
+{
 	width: 80%;
-    margin: 5em auto;
+	margin: 5em auto;
 }
 
-#about_about{
-    margin-top: 4em;
-    }
+#intro_img img
+{
+	width: 100%;
+	height: auto;
+}
 
-#about_about h3{
+#about_img
+{
+	margin: 5em auto;
+}
+
+#about_img img
+{
+	width: 100%;
+	height: auto;
+}
+
+#about_about
+{
+	margin-top: 4em;
+}
+
+#about_about h3
+{
 	font-family: 'Yeseva One', cursive;
 	text-align: center;
 }
 
-#about_about p{
+#about_about p
+{
 	font-family: 'Playfair Display', serif;
 }
 
-#about_txt{
-	width: 80%;
-    margin: 5em auto;
-}
-
-#about_txt #emoji img{
-	width: 25px !important; 
-	height: 25px !important;
-}
-
-#about_img{
+#about_txt
+{
 	margin: 5em auto;
 }
 
-
-#about_questions{
-	width: 80%;
-    margin: 3em auto;
+#about_txt #emoji img
+{
+	vertical-align: top !important;
+	width: 25px !important;
+	height: 25px !important;
+	margin-left: .5em;
 }
 
-#about_questions h3{
+/** QUESTIONS AREA **/
+#about_questions
+{
+	width: 60%;
+	margin: 3em auto;
+}
+
+#about_questions h3
+{
 	font-family: 'Yeseva One', cursive;
 }
 
-.questions_area{
+.questions_area
+{
 	margin-top: 5em;
 }
 
-.text-justify {
-  text-align: justify;
+.questions_area p
+{
+	font-size: 1.25em;
+	line-height: 1.5em;
+	font-family: 'Playfair Display', serif;
 }
 
+/** STATISTICS AREA**/
 
-#contact {
-	/*height: 30em;
-	position:relative;*/
-	    width: 70%;
-    margin: 0 auto;
+#statistic
+{
+	width: 80%;
+	margin: 4em auto;
 }
 
-#contact_bg{
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-    height: 30em;
-   	max-width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: url(../images/marbre.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  	opacity: 0.5;
-    filter: alpha(opacity=10);
-    
-}
-
-
-#contact_form {
-	padding-top: 2em;
-}
-
-#contact_form h1{
+#statistic h3
+{
 	font-family: 'Yeseva One', cursive;
 }
 
+#statistic p
+{
+	font-size: 1.25em;
+	line-height: 1.5em;
+}
 
-form{
+/** SOCIAL AREA **/
+#social
+{
+	width: 80%;
+	margin: 3em auto;
+}
 
+#social h3
+{
+	font-family: 'Yeseva One', cursive;
+}
+
+#social_share
+{
 	margin-top: 4em;
-    margin-bottom: 4em;
+	margin-bottom: 4em;
+	justify-content: center;
 }
 
-footer{
-	height: 4em;
-	padding: 1em;
-	/*background-color: #F9FAFC;*/
+#social_share div
+{
+	margin-bottom: 1em;
 }
 
-.full-width-div{
+/** CONTACT AREA **/
+#contact
+{
+	width: 80%;
+	margin: 4em auto;
+}
+
+#contact_form
+{
+	border: 1px solid black;
+	padding: 4em;
+	border-radius: 5px;
+}
+
+#contact_form h1
+{
+	font-family: 'Yeseva One', cursive;
+}
+
+#sendemail
+{
+	position: relative;
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+
+#loader
+{
+	display: none;
 	position: absolute;
-    width: 100%;
-    left: 0;
+	z-index: 1;
+	background-color: white;
+	top: 59%;
+	left: 45%;
 }
 
-footer span {
-    margin: 1em;
+.grecaptcha-badge
+{
+	display: none;
 }
-
-footer img {
-	width: 20px;
-    height: 20px;
-}
-
 
 /*****************************  MEDIA QUERIES  *************************************/
 
-@media only screen 
-and (max-width: 1024px) {
-header {
-	height: 40em;	
+
+@media only screen and (max-width: 1024px)
+{
+	header
+	{
+		height: 40em;
+	}
+
+	header h1
+	{
+		font-size: 4em;
+		color: rgba(0, 0, 0, 1);
+		padding-top: 1em;
+	}
+
+	header p
+	{
+		padding-right: 1em;
+		padding-left: 1em;
+		margin-top: 2em;
+		font-size: 1.25em;
+	}
+
+	#items
+	{
+		margin-top: 0.5em;
+		height: auto;
+	}
+
+	#banner_item
+	{
+		margin-top: 0.5em;
+	}
+
+	#items img
+	{
+		height: 7rem;
+		width: 7rem;
+	}
+
+	#pickanitem
+	{
+		margin: 1em;
+	}
+
+	#contact_form
+	{
+		padding: 2em;
+	}
 }
-
-header h1{
-	font-size: 4em;
-	color: rgba(0, 0, 0, 1);
-	padding-top: 1em;
-}
-
-header p{
-	padding-right: 1em;
-	padding-left: 1em;
-	margin-top: 2em;
-	font-size: 1.25em;
-}
-
-#items {
-	margin-top: 0.5em;
-	
-}
-
-#banner_item{
-	margin-top: 0.5em;
-}
-
-#items img {
-	height: 7rem;
-	width: 7rem;
-	
-}
-
-#pickanitem {
-	margin: 1em;
-}
-
-
-}
-
-
 
 /****** MOBILE QUERIES ******/
 
-@media only screen 
-and (max-width: 400px) {
 
-	header {
-	height: 35em;	
-}
+@media only screen and (max-width: 400px)
+{
+	header
+	{
+		height: 35em;
+	}
 
-#bg{
-    height: 35em; 
-}
+	#bg
+	{
+		height: 35em;
+	}
 
-header h1{
-	font-size: 2.5em;
-	color: rgba(0, 0, 0, 1);
-	padding-top: 0.75em;
-}
+	header h1
+	{
+		font-size: 2.5em;
+		color: rgba(0, 0, 0, 1);
+		padding-top: 0.75em;
+	}
 
-header p{
-	padding-right: 1em;
-	padding-left: 1em;
-	font-size: 1.2em;
-}
+	header p
+	{
+		padding-right: 1em;
+		padding-left: 1em;
+		font-size: 1.2em;
+	}
 
-#cat_quizz{
-	color: black;
-	border: 1px solid rgba(0, 0, 0, 1);
-    font-size: 1.125em;
-    -webkit-border-radius: 0.5em;
-       -moz-border-radius: 0.5em;
-            border-radius: 0.5em;
-}
+	#cat_quizz
+	{
+		color: black;
+		border: 1px solid rgba(0, 0, 0, 1);
+		font-size: 1.125em;
+		-webkit-border-radius: 0.5em;
+		-moz-border-radius: 0.5em;
+		border-radius: 0.5em;
+	}
 
-#items {
-	margin-top: 0.5em;
-	
-}
+	#items
+	{
+		margin-top: 0.5em;
+	}
 
-#banner_item{
-	margin-top: 0.5em;
-}
+	#banner_item
+	{
+		margin-top: 0.5em;
+	}
 
-#items img {
-	height: 7rem;
-	width: 7rem;
-	
-}
+	#items img
+	{
+		height: 7rem;
+		width: 7rem;
+	}
 
-#pickanitem {
-	margin: 1em;
-}
+	#pickanitem
+	{
+		margin: 1em;
+	}
 
+	#about_intro 
+	{
+    	width: 100%;
+	}
 
+	#about_about{
+		width: 100%;
+		margin: 4em auto;
+	}
+
+	#contact_form
+	{
+		padding: 1em;
+	}
 }

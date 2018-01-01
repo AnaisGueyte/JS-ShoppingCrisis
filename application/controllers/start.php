@@ -52,71 +52,49 @@ class Start extends CI_Controller {
 
     public function contactForm()
     {
-        // Head & Footer datas
-        $head_data = array();
-        $head_data['title'] = "Should I Buy the bag? 404!";
-        $head_data['description'] = 'In the shops and on this website, you\'re lost.';
-        $head_data['css'] = base_url('assets/css/start.css');
-        $head_data['url'] = base_url();
+        header('Access-Control-Allow-Origin: *');
 
-        $footer_data = array();
-        $footer_data['js'] = base_url('assets/js/start.js');
-
-
-        $this->form_validation->set_rules('name', '"name"', 'trim|required|max_length[155]|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('message', '"message"', 'trim|required|max_length[300]|encode_php_tags|xss_clean');
+        $contact_name = $this->input->post('name');
+        $contact_email = $this->input->post('email');
+        $contact_message = $this->input->post('message');        
         
-        if($this->form_validation->run() == FALSE)
-        {
-            $data['error_form'] = $this->lang->line('error_form');
-            $this->load->view('contact', $data);   
+
+        $this->load->library('email');
+
+        $config = array(
+            'protocol'  => 'smtp',
+            'smtp_host' => SMTP_HOST,
+            'smtp_port' => 465,
+            'smtp_user' => SMTP_USER,
+            'smtp_pass' => SMTP_PASS,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8'
+        );
+        $this->email->initialize($config);
+        $this->email->set_mailtype("html");
+        $this->email->set_newline("\r\n");
+
+
+        $this->email->from($contact_email, $contact_name);
+        $this->email->subject('New message from SIBTB contact form');
+        $this->email->to(WEBMASTER_EMAIL);
+        $this->email->message($contact_message);
             
+        if($this->email->send())
+        {
+            $this->email->clear();
+            $arr = array('okay' => 'yes');  
+            header('Content-Type: application/json');  
+            $this->output->set_output(json_encode( $arr ));
         }
         else
         {
-            $config = Array('protocol' => 'smtp',
-                    'smtp_host' => SMTP_HOST,
-                    'smtp_port' => 465,
-                    'smtp_user' => SMTP_USER,
-                    'smtp_pass' => SMTP_PASS,
-                    'mailtype'  => "html", 
-                    'charset'   => "utf-8"
-                );
+            $this->email->clear();
+            $arr = array('no' => 'not okay'); 
+            header('Content-Type: application/json');   
+            $this->output->set_output(json_encode( $arr ));
             
-            $this->load->library('email', $config);
-            
-            $this->email->set_newline("\r\n");
-            
-            $contact_name = $this->input->post('name');
-            $contact_email = $this->input->post('email');
-            $contact_message = $this->input->post('message');
-            
-            $this->email->from($contact_email, $contact_name);
-            $this->email->subject("New message from SIBTB the contact form");
-            $this->email->to("info@entrenous.coffee");
-            $this->email->message($contact_message); 
-            
-            
-            if($this->email->send())
-            {
-                $this->email->clear();
-                $data['my_email_sent'] = 'sent!';
-
-                $this->load->view('templates/head', $head_data);
-                $this->load->view('start', $data);
-                $this->load->view('templates/footer', $footer_data);
-                
-            }
-            else
-            {
-                $this->email->clear();
-                $data['error_email'] = 'Oops, something went wrong... Try again later. And don\'t tell anyone, please.';
-
-                $this->load->view('templates/head', $head_data);
-                $this->load->view('start', $data);
-                $this->load->view('templates/footer', $footer_data);
-            }
-        } 
-    }
+        }
+    } 
+    
 }
